@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="jumbotron text-center">
+    <h1>MEAN Chat App</h1>
+    <p class="lead">Welcome to my chat application built using the MEAN stack!</p>
+    <div *ngIf="!this.authService.loggedIn()">
+      <a class="btn btn-primary" [routerLink]="['/register']">Register</a>
+      <span style="margin-left:4px; margin-right:4px;">or</span>
+      <a class="btn btn-info" [routerLink]="['/login']">Login</a>
+    </div>
+
+    <div *ngIf="this.authService.loggedIn()">
+      <a class="btn btn-primary" [routerLink]="['/chat']">Chat Room</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <h3>NodeJS Backend</h3>
+      <p>A rock solid NodeJS server using ExpressJS for request handling and MongoDB for data storage</p>
+      <p>
+        <a href="https://nodejs.org/" target="_blank">node</a> |
+        <a href="https://expressjs.com/" target="_blank">express</a> |
+        <a href="https://www.mongodb.com/" target="_blank">mongo</a>
+      </p>
+    </div>
+    <div class="col-md-4 text-center">
+      <h3>Socket.io</h3>
+      <p>Web sockets implementation using Socket.io for back and forth communication (chat functionality)</p>
+      <p>
+        <a href="https://socket.io/" target="_blank">socket.io</a>
+      </p>
+    </div>
+    <div class="col-md-4 text-center">
+      <h3>Angular</h3>
+      <p>Frontend developed using Angular framework for modular, compact and well performing app</p>
+      <p>
+        <a href="https://angular.io/" target="_blank">angular</a> |
+        <a href="https://cli.angular.io/" target="_blank">angular-cli</a>
+      </p>
+    </div>
+  </div>
+</div>

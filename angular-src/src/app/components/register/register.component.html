@@ -1,0 +1,52 @@
+<div class="container">
+  <h2 class="page-header">Register</h2>
+
+  <form [formGroup]="registerForm"
+    (ngSubmit)="onRegisterSubmit()"
+    >
+
+  <div class="form-group">
+    <label for="username">Username</label>
+
+    <input type="text" name="username" class="form-control"
+      id="username"
+      placeholder="Enter your username"
+      formControlName="username"
+      autofocus="true"
+      >
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+
+    <input type="password" name="password" class="form-control"
+      id="password"
+      placeholder="Enter your password"
+      formControlName="password"
+      >
+  </div>
+
+  <div class="form-group">
+    <label for="confirmPass">Confirm password</label>
+
+      <input type="password" name="confirmPass" class="form-control"
+      id="confirmPass"
+      placeholder="Confirm password"
+      formControlName="confirmPass"
+      >
+  </div>
+
+  <div class="form-group">
+    <button [disabled]="registerForm.invalid"
+      type="submit"
+      class="btn btn-primary"
+      name="register"
+      >Register
+    </button>
+  </div>
+
+  <a [routerLink]="['/login']">Already have an account?</a>
+
+  </form>
+
+</div>

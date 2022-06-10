@@ -1,0 +1,44 @@
+<div class="container">
+  <h2 class="page-header text-center">Login</h2>
+
+  <form [formGroup]="loginForm"
+    (ngSubmit)="onLoginSubmit()"
+    >
+
+    <div class="form-group">
+      <label for="username">Username</label>
+
+      <input type="text" name="username" class="form-control"
+        id="username"
+        placeholder="Enter your username"
+        formControlName="username"
+        autofocus="true"
+        >
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+
+      <input type="password" name="password" class="form-control"
+        id="password"
+        placeholder="Enter your password"
+        formControlName="password"
+        >
+    </div>
+
+    <div class="form-group">
+      <button [disabled]="loginForm.invalid"
+        type="submit"
+        class="btn btn-primary btn-block"
+        name="login"
+        >Login
+      </button>
+    </div>
+
+    <div class="text-center">
+      <a [routerLink]="['/register']">Don't have an account?</a>
+    </div>
+
+  </form>
+
+</div>
